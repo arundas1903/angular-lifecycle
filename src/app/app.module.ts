@@ -8,6 +8,7 @@ import { MainComponent } from './components/main/main.component';
 import { SubComponentComponent } from './components/sub-component/sub-component.component';
 import { SubComponent2Component } from './components/sub-component2/sub-component2.component';
 import { GithubComponent } from './components/github/github.component';
+import { FlexComponent } from './components/flex/flex.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GithubComponent } from './components/github/github.component';
     MainComponent,
     SubComponentComponent,
     SubComponent2Component,
-    GithubComponent
+    GithubComponent,
+    FlexComponent
   ],
   imports: [
     BrowserModule,

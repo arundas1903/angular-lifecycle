@@ -1,0 +1,21 @@
+<div class="container">
+    <p>
+        Main Container
+    </p>
+    <div class="sub-container">
+        <p>
+            Sub container. Flex direction: {{ flexDirection | titlecase }}
+        </p>
+        <div [ngClass]="(this.flexDirection === 'column') ? 'column-container': 'row-container'">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div>
+            <button (click)="this.toggleFlexDirection()" class="toggle-button">
+                Toggle flex direction column/row
+            </button>
+        </div>
+    </div>
+</div>
