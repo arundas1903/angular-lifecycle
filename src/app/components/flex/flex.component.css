@@ -37,7 +37,11 @@ input {
     margin-right: 40px;
 }
 
-.set-align-items, .set-justify-content, .set-flex-wrap, .set-flex-direction, .set-values, .set-align-content {
+mat-form-field {
+    margin-right: 7px;
+}
+
+.set-wrapper{
     padding: 10px;
     background-color: #f2f2f2;
     margin-bottom: 10px;
@@ -45,7 +49,7 @@ input {
 }
 
 .sub-set-align-items div {
-    padding: 10px;
+    padding-top: 10px;
 }
 
 .sub-set-align-items input, .sub-set-align-items label {

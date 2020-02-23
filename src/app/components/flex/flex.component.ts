@@ -19,6 +19,10 @@ export class FlexComponent implements OnInit {
   boxHeight2: number = 50;
   boxHeight3: number = 50;
   boxHeight4: number = 50;
+  boxOrder1: number = 1;
+  boxOrder2: number = 2;
+  boxOrder3: number = 3;
+  boxOrder4: number = 4;
   boxContainerHeight: number = 100;
 
   constructor() { }

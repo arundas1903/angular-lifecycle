@@ -19,10 +19,18 @@
                     'align-items': alignItems,
                     'align-content': alignContent,
                     'height': boxContainerHeight + 'px'}">
-            <div #box [ngStyle]="{'width': boxWidth1 + 'px', 'height': boxHeight1 + 'px'}" class="box">Box 1</div>
-            <div [ngStyle]="{'width': boxWidth2 + 'px', 'height': boxHeight2 + 'px'}" class="box">Box 2</div>
-            <div [ngStyle]="{'width': boxWidth3 + 'px', 'height': boxHeight3 + 'px'}" class="box">Box 3</div>
-            <div [ngStyle]="{'width': boxWidth4 + 'px', 'height': boxHeight4 + 'px'}" class="box">Box 4</div>
+            <div #box 
+                [ngStyle]="{'width': boxWidth1 + 'px', 'order': boxOrder1, 
+                            'height': boxHeight1 + 'px'}" class="box">Box 1</div>
+            <div 
+                [ngStyle]="{'width': boxWidth2 + 'px', 'order': boxOrder2,
+                            'height': boxHeight2 + 'px'}" class="box">Box 2</div>
+            <div 
+                [ngStyle]="{'width': boxWidth3 + 'px', 'order': boxOrder3,
+                            'height': boxHeight3 + 'px'}" class="box">Box 3</div>
+            <div 
+                [ngStyle]="{'width': boxWidth4 + 'px', 'order': boxOrder4,
+                            'height': boxHeight4 + 'px'}" class="box">Box 4</div>
         </div>
         <p>
             Initial Box Width: 600px
@@ -38,29 +46,29 @@
                 <h3 class="heading">
                     Parent properties
                 </h3>
-                <div class="set-values">
+                <div class="set-values set-wrapper">
                     <h3>
                         Set Box Width:
                     </h3>
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field>
                         <mat-label>Set Box Width:</mat-label>
                         <input matInput type="number" (keyup)="setBoxWidth($event.target.value)">
                     </mat-form-field>
                     <h3>
                         Set Box Height:
                     </h3>
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field>
                         <mat-label>Set Box Height:</mat-label>
                         <input matInput type="number" (keyup)="setBoxHeight($event.target.value)">
                     </mat-form-field>
                     <h3>
                         Set Box Wrapper Height
                     </h3>
-                    <mat-form-field class="example-full-width">
+                    <mat-form-field>
                         <input matInput type="number" [(ngModel)]="boxContainerHeight">
                     </mat-form-field>
                 </div>
-                <div class="set-flex-direction">
+                <div class="set-flex-direction set-wrapper">
                     <h3>
                         Set flex direction
                     </h3>
@@ -77,7 +85,7 @@
                         column-reverse
                     </button>
                 </div>
-                <div class="set-flex-wrap">
+                <div class="set-flex-wrap set-wrapper">
                     <h3>
                         Set flex-wrap
                     </h3>
@@ -91,7 +99,7 @@
                         wrap-reverse
                     </button>
                 </div>
-                <div class="set-justify-content">
+                <div class="set-justify-content set-wrapper">
                     <h3>
                         Set justify-content
                     </h3>
@@ -114,7 +122,7 @@
                         space-evenly
                     </button>
                 </div>
-                <div class="set-align-items">
+                <div class="set-align-items set-wrapper">
                     <h3>
                         Set Align Items
                     </h3>
@@ -124,57 +132,41 @@
                         </p>
                         <div>
                             <p>Width</p>
-                            <div>
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Box 3:</mat-label>
-                                    <input matInput type="number" [(ngModel)]="boxWidth1">
-                                </mat-form-field>
-                            </div>
-                            <div>
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Box 3:</mat-label>
-                                    <input matInput type="number" [(ngModel)]="boxWidth2">
-                                </mat-form-field>
-                            </div>
-                            <div>
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Box 3:</mat-label>
-                                    <input matInput type="number" [(ngModel)]="boxWidth3">
-                                </mat-form-field>
-                            </div>
-                            <div>
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Box 4:</mat-label>
-                                    <input matInput type="number" [(ngModel)]="boxWidth4">
-                                </mat-form-field>
-                            </div>
+                            <mat-form-field>
+                                <mat-label>Box 1:</mat-label>
+                                <input matInput type="number" [(ngModel)]="boxWidth1">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Box 2:</mat-label>
+                                <input matInput type="number" [(ngModel)]="boxWidth2">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Box 3:</mat-label>
+                                <input matInput type="number" [(ngModel)]="boxWidth3">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Box 4:</mat-label>
+                                <input matInput type="number" [(ngModel)]="boxWidth4">
+                            </mat-form-field>
                         </div>
                         <div>
                             <p>Height</p>
-                            <div>
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Box 1:</mat-label>
-                                    <input matInput type="number" [(ngModel)]="boxHeight1">
-                                </mat-form-field>
-                            </div>
-                            <div>
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Box 2:</mat-label>
-                                    <input matInput type="number" [(ngModel)]="boxHeight2">
-                                </mat-form-field>
-                            </div>
-                            <div>
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Box 3:</mat-label>
-                                    <input matInput type="number" [(ngModel)]="boxHeight3">
-                                </mat-form-field>
-                            </div>
-                            <div>
-                                <mat-form-field class="example-full-width">
-                                    <mat-label>Box 4:</mat-label>
-                                    <input matInput type="number" [(ngModel)]="boxHeight4">
-                                </mat-form-field>
-                            </div>
+                            <mat-form-field>
+                                <mat-label>Box 1:</mat-label>
+                                <input matInput type="number" [(ngModel)]="boxHeight1">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Box 2:</mat-label>
+                                <input matInput type="number" [(ngModel)]="boxHeight2">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Box 3:</mat-label>
+                                <input matInput type="number" [(ngModel)]="boxHeight3">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Box 4:</mat-label>
+                                <input matInput type="number" [(ngModel)]="boxHeight4">
+                            </mat-form-field>
                         </div>
                     </div>
                     <div>
@@ -195,7 +187,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="set-align-content">
+                <div class="set-align-content set-wrapper">
                     <h3>
                         Set align-content
                     </h3>
@@ -220,6 +212,30 @@
                 </div>
             </div>
             <div class="children-properties">
+                <h3 class="heading">
+                    Children properties
+                </h3>
+                <div class="set-order set-wrapper">
+                    <h3>
+                        Set Box Order:
+                    </h3>
+                    <mat-form-field>
+                        <mat-label>Box 1:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxOrder1">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 2:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxOrder2">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 3:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxOrder3">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 4:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxOrder4">
+                    </mat-form-field>
+                </div>
             </div>
         </div>
     </div>
