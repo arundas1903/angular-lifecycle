@@ -19,7 +19,9 @@
         [ngStyle]="{'flex-direction': flexDirection, 
                     'flex-wrap': flexWrap,
                     'justify-content': justifyContent,
-                    'align-items': alignItems}">
+                    'align-items': alignItems,
+                    'align-content': alignContent,
+                    'height': boxContainerHeight + 'px'}">
             <div #box [ngStyle]="{'width': boxWidth1 + 'px', 'height': boxHeight1 + 'px'}" class="box">1</div>
             <div [ngStyle]="{'width': boxWidth2 + 'px', 'height': boxHeight2 + 'px'}" class="box">2</div>
             <div [ngStyle]="{'width': boxWidth3 + 'px', 'height': boxHeight3 + 'px'}" class="box">3</div>
@@ -143,6 +145,35 @@
                     baseline
                 </button>
             </div>
+        </div>
+        <div class="set-align-content">
+            <h3>
+                Set align-content
+            </h3>
+            <div>
+                <p>
+                    Change box wrapper height
+                </p>
+                <input [(ngModel)]="boxContainerHeight"/>
+            </div>
+            <button (click)="this.changeAlignContent('flex-start')" class="toggle-button">
+                flex-start
+            </button>
+            <button (click)="this.changeAlignContent('flex-end')" class="toggle-button">
+                flex-end
+            </button>
+            <button (click)="this.changeAlignContent('center')" class="toggle-button">
+                center
+            </button>
+            <button (click)="this.changeAlignContent('stretch')" class="toggle-button">
+                stretch
+            </button>
+            <button (click)="this.changeAlignContent('space-between')" class="toggle-button">
+                space-between
+            </button>
+            <button (click)="this.changeAlignContent('space-around')" class="toggle-button">
+                space-around
+            </button>
         </div>
     </div>
 </div>

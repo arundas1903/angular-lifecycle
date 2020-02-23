@@ -12,6 +12,7 @@
 
 .flex-container {
     display: flex;
+    border: 1px solid;
 }
 
 input {
@@ -33,7 +34,7 @@ input {
     margin-right: 10px;
 }
 
-.set-align-items, .set-justify-content, .set-flex-wrap, .set-flex-direction, .set-values {
+.set-align-items, .set-justify-content, .set-flex-wrap, .set-flex-direction, .set-values, .set-align-content {
     border: 1px solid;
     padding: 10px;
     background-color: #fafad2;

@@ -10,6 +10,7 @@ export class FlexComponent implements OnInit {
   flexWrap: string = 'nowrap';
   justifyContent: string = 'flex-start';
   alignItems: string = 'stretch';
+  alignContent: string = 'flex-start';
   boxWidth1: number = 600;
   boxWidth2: number = 600;
   boxWidth3: number = 600;
@@ -18,6 +19,7 @@ export class FlexComponent implements OnInit {
   boxHeight2: number = 50;
   boxHeight3: number = 50;
   boxHeight4: number = 50;
+  boxContainerHeight: number = 100;
 
   constructor() { }
 
@@ -52,6 +54,10 @@ export class FlexComponent implements OnInit {
     this.boxHeight2 = height;
     this.boxHeight3 = height;
     this.boxHeight4 = height; 
+  }
+
+  changeAlignContent(alignContent: string) :void {
+    this.alignContent = alignContent;
   }
 
 }
