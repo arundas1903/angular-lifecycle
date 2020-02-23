@@ -12,12 +12,17 @@
         <p>
             Current flex wrap: {{ flexWrap | titlecase }}
         </p>
+        <p>
+            Current justify content: {{ justifyContent | titlecase }}
+        </p>
         <div class="flex-container" 
-        [ngStyle]="{'flex-direction': this.flexDirection, 'flex-wrap': this.flexWrap}">
-            <div #box class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-            <div class="box">4</div>
+        [ngStyle]="{'flex-direction': flexDirection, 
+                    'flex-wrap': flexWrap,
+                    'justify-content': justifyContent}">
+            <div #box [ngStyle]="{'width': boxWidth1 + 'px'}" class="box">1</div>
+            <div [ngStyle]="{'width': boxWidth2 + 'px'}" class="box">2</div>
+            <div [ngStyle]="{'width': boxWidth3 + 'px'}" class="box">3</div>
+            <div [ngStyle]="{'width': boxWidth4 + 'px'}" class="box">4</div>
         </div>
         <p>
             Box width set: 600px
@@ -25,36 +30,89 @@
         <p>
             Calculated box width after render: {{ box.offsetWidth }}
         </p>
+        <p>
+            Change Width:
+        </p>
+        <input (keyup)="setBoxWidth($event.target.value)" type="number"/>
         <div>
             <p>
                 Set flex direction
             </p>
             <button (click)="this.toggleFlexDirection('row')" class="toggle-button">
-                Row
+                row
             </button>
             <button (click)="this.toggleFlexDirection('column')" class="toggle-button">
-                Column
+                column
             </button>
             <button (click)="this.toggleFlexDirection('row-reverse')" class="toggle-button">
-                Row Reverse
+                row-reverse
             </button>
             <button (click)="this.toggleFlexDirection('column-reverse')" class="toggle-button">
-                Column Reverse
+                column-reverse
             </button>
         </div>
         <div>
             <p>
-                Set flex wrap
+                Set flex-wrap
             </p>
             <button (click)="this.changeFlexWrap('nowrap')" class="toggle-button">
-                No Wrap
+                no-wrap
             </button>
             <button (click)="this.changeFlexWrap('wrap')" class="toggle-button">
-                Wrap
+                wrap
             </button>
             <button (click)="this.changeFlexWrap('wrap-reverse')" class="toggle-button">
-                Wrap Reverse
+                wrap-reverse
             </button>
+        </div>
+        <div>
+            <p>
+                Set justify-content
+            </p>
+            <button (click)="this.changeJustifyContent('flex-start')" class="toggle-button">
+                flex-start
+            </button>
+            <button (click)="this.changeJustifyContent('flex-end')" class="toggle-button">
+                flex-end
+            </button>
+            <button (click)="this.changeJustifyContent('center')" class="toggle-button">
+                center
+            </button>
+            <button (click)="this.changeJustifyContent('space-between')" class="toggle-button">
+                space-between
+            </button>
+            <button (click)="this.changeJustifyContent('space-around')" class="toggle-button">
+                space-around
+            </button>
+            <button (click)="this.changeJustifyContent('space-evenly')" class="toggle-button">
+                space-evenly
+            </button>
+        </div>
+        <div>
+            <p>
+                Set Align Items
+            </p>
+            <div class="set-align-items">
+                <p>
+                    Change box width values
+                </p>
+                <div>
+                    <label>Box 1 Width:</label>
+                    <input [(ngModel)]="boxWidth1"/>
+                </div>
+                <div>
+                    <label>Box 2 Width:</label>
+                    <input [(ngModel)]="boxWidth2"/>
+                </div>
+                <div>
+                    <label>Box 3 Width:</label>
+                    <input [(ngModel)]="boxWidth3"/>
+                </div>
+                <div>
+                    <label>Box 4 Width:</label>
+                    <input [(ngModel)]="boxWidth4"/>
+                </div>
+            </div>
         </div>
     </div>
 </div>

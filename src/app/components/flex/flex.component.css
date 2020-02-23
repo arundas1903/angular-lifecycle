@@ -27,3 +27,11 @@
     background: white;
     margin-right: 10px;
 }
+
+.set-align-items div {
+    padding: 10px;
+}
+
+.set-align-items input {
+    margin-left: 10px;
+}
