@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { SubComponentComponent } from './components/sub-component/sub-component.component';
 import { SubComponent2Component } from './components/sub-component2/sub-component2.component';
+import { GithubComponent } from './components/github/github.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     SubComponentComponent,
-    SubComponent2Component
+    SubComponent2Component,
+    GithubComponent
   ],
   imports: [
     BrowserModule,
