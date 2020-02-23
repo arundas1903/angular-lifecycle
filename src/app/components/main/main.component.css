@@ -1,0 +1,16 @@
+.main-wrapper {
+    width: 100%;
+    height: 750px;
+    background: yellow;
+    border: 1px solid;
+}
+
+.main-heading {
+    width: 200px;
+    margin: auto;
+}
+
+.main-detail {
+    margin: auto;
+    width: 100px;
+}
