@@ -31,15 +31,17 @@
         <p>
             Calculated box width after render: {{ box.offsetWidth }}
         </p>
-        <p>
-            Set box Width:
-        </p>
-        <input (keyup)="setBoxWidth($event.target.value)" type="number"/>
-        <p>
-            Set box Height:
-        </p>
-        <input (keyup)="setBoxHeight($event.target.value)" type="number"/>
-        <div>
+        <div class="set-values">
+            <p>
+                Set box Width:
+            </p>
+            <input (keyup)="setBoxWidth($event.target.value)" type="number"/>
+            <p>
+                Set box Height:
+            </p>
+            <input (keyup)="setBoxHeight($event.target.value)" type="number"/>
+        </div>
+        <div class="set-flex-direction">
             <p>
                 Set flex direction
             </p>
@@ -56,7 +58,7 @@
                 column-reverse
             </button>
         </div>
-        <div>
+        <div class="set-flex-wrap">
             <p>
                 Set flex-wrap
             </p>
@@ -70,7 +72,7 @@
                 wrap-reverse
             </button>
         </div>
-        <div>
+        <div class="set-justify-content">
             <p>
                 Set justify-content
             </p>
@@ -93,44 +95,34 @@
                 space-evenly
             </button>
         </div>
-        <div>
+        <div class="set-align-items">
             <p>
                 Set Align Items
             </p>
-            <div class="set-align-items">
+            <div class="sub-set-align-items">
                 <p>
                     Change box width and height values
                 </p>
                 <div>
-                    <label>Box 1 Width:</label>
+                    <p>Width</p>
+                    <label>Box 1:</label>
                     <input [(ngModel)]="boxWidth1"/>
-                </div>
-                <div>
-                    <label>Box 2 Width:</label>
+                    <label>Box 2:</label>
                     <input [(ngModel)]="boxWidth2"/>
-                </div>
-                <div>
-                    <label>Box 3 Width:</label>
+                    <label>Box 3:</label>
                     <input [(ngModel)]="boxWidth3"/>
-                </div>
-                <div>
-                    <label>Box 4 Width:</label>
+                    <label>Box 4:</label>
                     <input [(ngModel)]="boxWidth4"/>
                 </div>
                 <div>
-                    <label>Box 1 Height:</label>
+                    <p>Height</p>
+                    <label>Box 1:</label>
                     <input [(ngModel)]="boxHeight1"/>
-                </div>
-                <div>
-                    <label>Box 2 Height:</label>
+                    <label>Box 2:</label>
                     <input [(ngModel)]="boxHeight2"/>
-                </div>
-                <div>
-                    <label>Box 3 Height:</label>
+                    <label>Box 3:</label>
                     <input [(ngModel)]="boxHeight3"/>
-                </div>
-                <div>
-                    <label>Box 4 Height:</label>
+                    <label>Box 4:</label>
                     <input [(ngModel)]="boxHeight4"/>
                 </div>
             </div>
