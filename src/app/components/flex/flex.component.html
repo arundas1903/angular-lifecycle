@@ -29,22 +29,22 @@
             Box width set: 600px
         </p>
         <p>
-            Calculated box width after render: {{ box.offsetWidth }}
+            Calculated box width after render: {{ box.offsetWidth }}px
         </p>
         <div class="set-values">
-            <p>
+            <h3>
                 Set box Width:
-            </p>
+            </h3>
             <input (keyup)="setBoxWidth($event.target.value)" type="number"/>
-            <p>
+            <h3>
                 Set box Height:
-            </p>
+            </h3>
             <input (keyup)="setBoxHeight($event.target.value)" type="number"/>
         </div>
         <div class="set-flex-direction">
-            <p>
+            <h3>
                 Set flex direction
-            </p>
+            </h3>
             <button (click)="this.toggleFlexDirection('row')" class="toggle-button">
                 row
             </button>
@@ -59,9 +59,9 @@
             </button>
         </div>
         <div class="set-flex-wrap">
-            <p>
+            <h3>
                 Set flex-wrap
-            </p>
+            </h3>
             <button (click)="this.changeFlexWrap('nowrap')" class="toggle-button">
                 no-wrap
             </button>
@@ -73,9 +73,9 @@
             </button>
         </div>
         <div class="set-justify-content">
-            <p>
+            <h3>
                 Set justify-content
-            </p>
+            </h3>
             <button (click)="this.changeJustifyContent('flex-start')" class="toggle-button">
                 flex-start
             </button>
@@ -96,9 +96,9 @@
             </button>
         </div>
         <div class="set-align-items">
-            <p>
+            <h3>
                 Set Align Items
-            </p>
+            </h3>
             <div class="sub-set-align-items">
                 <p>
                     Change box width and height values
