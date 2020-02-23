@@ -49,3 +49,7 @@ input {
 .sub-set-align-items input, .sub-set-align-items label {
     margin-left: 10px;
 }
+
+.boxContainerWrapper {
+    margin-bottom: 10px;
+}
