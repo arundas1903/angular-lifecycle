@@ -3,18 +3,57 @@
         Main Container
     </p>
     <div class="sub-container">
+        <h3>
+            Understand flex direction
+        </h3>
         <p>
-            Sub container. Flex direction: {{ flexDirection | titlecase }}
+            Current flex direction: {{ flexDirection | titlecase }}
         </p>
-        <div [ngClass]="(this.flexDirection === 'column') ? 'column-container': 'row-container'">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+        <p>
+            Current flex wrap: {{ flexWrap | titlecase }}
+        </p>
+        <div class="flex-container" 
+        [ngStyle]="{'flex-direction': this.flexDirection, 'flex-wrap': this.flexWrap}">
+            <div #box class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+        </div>
+        <p>
+            Box width set: 600px
+        </p>
+        <p>
+            Calculated box width after render: {{ box.offsetWidth }}
+        </p>
+        <div>
+            <p>
+                Set flex direction
+            </p>
+            <button (click)="this.toggleFlexDirection('row')" class="toggle-button">
+                Row
+            </button>
+            <button (click)="this.toggleFlexDirection('column')" class="toggle-button">
+                Column
+            </button>
+            <button (click)="this.toggleFlexDirection('row-reverse')" class="toggle-button">
+                Row Reverse
+            </button>
+            <button (click)="this.toggleFlexDirection('column-reverse')" class="toggle-button">
+                Column Reverse
+            </button>
         </div>
         <div>
-            <button (click)="this.toggleFlexDirection()" class="toggle-button">
-                Toggle flex direction column/row
+            <p>
+                Set flex wrap
+            </p>
+            <button (click)="this.changeFlexWrap('nowrap')" class="toggle-button">
+                No Wrap
+            </button>
+            <button (click)="this.changeFlexWrap('wrap')" class="toggle-button">
+                Wrap
+            </button>
+            <button (click)="this.changeFlexWrap('wrap-reverse')" class="toggle-button">
+                Wrap Reverse
             </button>
         </div>
     </div>

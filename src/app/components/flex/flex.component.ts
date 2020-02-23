@@ -6,19 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flex.component.css']
 })
 export class FlexComponent implements OnInit {
-  flexDirection: string = 'column';
+  flexDirection: string = 'row';
+  flexWrap: string = 'nowrap';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggleFlexDirection() :void {
-    if (this.flexDirection === 'row') {
-      this.flexDirection = 'column';
-    } else {
-      this.flexDirection = 'row';
-    }
+  toggleFlexDirection(flexDirection: string) :void {
+    this.flexDirection = flexDirection;
+  }
+
+  changeFlexWrap(flexWrap: string) :void {
+    this.flexWrap = flexWrap;
   }
 
 }
