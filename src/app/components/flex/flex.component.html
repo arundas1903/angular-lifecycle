@@ -20,16 +20,20 @@
                     'align-content': alignContent,
                     'height': boxContainerHeight + 'px'}">
             <div #box 
-                [ngStyle]="{'width': boxWidth1 + 'px', 'order': boxOrder1, 
+                [ngStyle]="{'width': boxWidth1 + 'px', 'order': boxOrder1,
+                            'flex-grow': boxFlexGrow1, 'flex-shrink': boxFlexShrink1,
                             'height': boxHeight1 + 'px'}" class="box">Box 1</div>
             <div 
                 [ngStyle]="{'width': boxWidth2 + 'px', 'order': boxOrder2,
+                            'flex-grow': boxFlexGrow2,'flex-shrink': boxFlexShrink2,
                             'height': boxHeight2 + 'px'}" class="box">Box 2</div>
             <div 
                 [ngStyle]="{'width': boxWidth3 + 'px', 'order': boxOrder3,
+                            'flex-grow': boxFlexGrow3, 'flex-shrink': boxFlexShrink3,
                             'height': boxHeight3 + 'px'}" class="box">Box 3</div>
             <div 
                 [ngStyle]="{'width': boxWidth4 + 'px', 'order': boxOrder4,
+                            'flex-grow': boxFlexGrow4, 'flex-shrink': boxFlexShrink4,
                             'height': boxHeight4 + 'px'}" class="box">Box 4</div>
         </div>
         <p>
@@ -234,6 +238,48 @@
                     <mat-form-field>
                         <mat-label>Box 4:</mat-label>
                         <input matInput type="number" [(ngModel)]="boxOrder4">
+                    </mat-form-field>
+                </div>
+                <div class="set-order set-wrapper">
+                    <h3>
+                        Set Flex Grow:
+                    </h3>
+                    <mat-form-field>
+                        <mat-label>Box 1:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxFlexGrow1">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 2:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxFlexGrow2">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 3:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxFlexGrow3">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 4:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxFlexGrow4">
+                    </mat-form-field>
+                </div>
+                <div class="set-order set-wrapper">
+                    <h3>
+                        Set Flex Shrink:
+                    </h3>
+                    <mat-form-field>
+                        <mat-label>Box 1:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxFlexShrink1">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 2:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxFlexShrink2">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 3:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxFlexShrink3">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Box 4:</mat-label>
+                        <input matInput type="number" [(ngModel)]="boxFlexShrink4">
                     </mat-form-field>
                 </div>
             </div>

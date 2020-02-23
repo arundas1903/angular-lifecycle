@@ -23,6 +23,14 @@ export class FlexComponent implements OnInit {
   boxOrder2: number = 2;
   boxOrder3: number = 3;
   boxOrder4: number = 4;
+  boxFlexGrow1: number = 1;
+  boxFlexGrow2: number = 2;
+  boxFlexGrow3: number = 3;
+  boxFlexGrow4: number = 4;
+  boxFlexShrink1: number = 1;
+  boxFlexShrink2: number = 1;
+  boxFlexShrink3: number = 1;
+  boxFlexShrink4: number = 1;
   boxContainerHeight: number = 100;
 
   constructor() { }
