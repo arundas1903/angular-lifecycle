@@ -1,11 +1,8 @@
 <div class="container">
-    <p>
-        Main Container
-    </p>
+    <h3 class="heading">
+        Learn Flex With Material UI
+    </h3>
     <div class="sub-container">
-        <h3>
-            Understand flex direction
-        </h3>
         <p>
             Current flex direction: {{ flexDirection | titlecase }}
         </p>
@@ -22,158 +19,208 @@
                     'align-items': alignItems,
                     'align-content': alignContent,
                     'height': boxContainerHeight + 'px'}">
-            <div #box [ngStyle]="{'width': boxWidth1 + 'px', 'height': boxHeight1 + 'px'}" class="box">1</div>
-            <div [ngStyle]="{'width': boxWidth2 + 'px', 'height': boxHeight2 + 'px'}" class="box">2</div>
-            <div [ngStyle]="{'width': boxWidth3 + 'px', 'height': boxHeight3 + 'px'}" class="box">3</div>
-            <div [ngStyle]="{'width': boxWidth4 + 'px', 'height': boxHeight4 + 'px'}" class="box">4</div>
+            <div #box [ngStyle]="{'width': boxWidth1 + 'px', 'height': boxHeight1 + 'px'}" class="box">Box 1</div>
+            <div [ngStyle]="{'width': boxWidth2 + 'px', 'height': boxHeight2 + 'px'}" class="box">Box 2</div>
+            <div [ngStyle]="{'width': boxWidth3 + 'px', 'height': boxHeight3 + 'px'}" class="box">Box 3</div>
+            <div [ngStyle]="{'width': boxWidth4 + 'px', 'height': boxHeight4 + 'px'}" class="box">Box 4</div>
         </div>
         <p>
-            Box width set: 600px
+            Initial Box Width: 600px
+        </p>
+        <p>
+            Initial Box Height: 50px
         </p>
         <p>
             Calculated box width after render: {{ box.offsetWidth }}px
         </p>
-        <div class="set-values">
-            <h3>
-                Set box Width:
-            </h3>
-            <input (keyup)="setBoxWidth($event.target.value)" type="number"/>
-            <h3>
-                Set box Height:
-            </h3>
-            <input (keyup)="setBoxHeight($event.target.value)" type="number"/>
-        </div>
-        <div class="set-flex-direction">
-            <h3>
-                Set flex direction
-            </h3>
-            <button (click)="this.toggleFlexDirection('row')" class="toggle-button">
-                row
-            </button>
-            <button (click)="this.toggleFlexDirection('column')" class="toggle-button">
-                column
-            </button>
-            <button (click)="this.toggleFlexDirection('row-reverse')" class="toggle-button">
-                row-reverse
-            </button>
-            <button (click)="this.toggleFlexDirection('column-reverse')" class="toggle-button">
-                column-reverse
-            </button>
-        </div>
-        <div class="set-flex-wrap">
-            <h3>
-                Set flex-wrap
-            </h3>
-            <button (click)="this.changeFlexWrap('nowrap')" class="toggle-button">
-                no-wrap
-            </button>
-            <button (click)="this.changeFlexWrap('wrap')" class="toggle-button">
-                wrap
-            </button>
-            <button (click)="this.changeFlexWrap('wrap-reverse')" class="toggle-button">
-                wrap-reverse
-            </button>
-        </div>
-        <div class="set-justify-content">
-            <h3>
-                Set justify-content
-            </h3>
-            <button (click)="this.changeJustifyContent('flex-start')" class="toggle-button">
-                flex-start
-            </button>
-            <button (click)="this.changeJustifyContent('flex-end')" class="toggle-button">
-                flex-end
-            </button>
-            <button (click)="this.changeJustifyContent('center')" class="toggle-button">
-                center
-            </button>
-            <button (click)="this.changeJustifyContent('space-between')" class="toggle-button">
-                space-between
-            </button>
-            <button (click)="this.changeJustifyContent('space-around')" class="toggle-button">
-                space-around
-            </button>
-            <button (click)="this.changeJustifyContent('space-evenly')" class="toggle-button">
-                space-evenly
-            </button>
-        </div>
-        <div class="set-align-items">
-            <h3>
-                Set Align Items
-            </h3>
-            <div class="sub-set-align-items">
-                <p>
-                    Change box width and height values
-                </p>
-                <div>
-                    <p>Width</p>
-                    <label>Box 1:</label>
-                    <input [(ngModel)]="boxWidth1"/>
-                    <label>Box 2:</label>
-                    <input [(ngModel)]="boxWidth2"/>
-                    <label>Box 3:</label>
-                    <input [(ngModel)]="boxWidth3"/>
-                    <label>Box 4:</label>
-                    <input [(ngModel)]="boxWidth4"/>
+        <div class="properties-wrapper">
+            <div class="parent-properties">
+                <h3 class="heading">
+                    Parent properties
+                </h3>
+                <div class="set-values">
+                    <h3>
+                        Set Box Width:
+                    </h3>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Set Box Width:</mat-label>
+                        <input matInput type="number" (keyup)="setBoxWidth($event.target.value)">
+                    </mat-form-field>
+                    <h3>
+                        Set Box Height:
+                    </h3>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Set Box Height:</mat-label>
+                        <input matInput type="number" (keyup)="setBoxHeight($event.target.value)">
+                    </mat-form-field>
+                    <h3>
+                        Set Box Wrapper Height
+                    </h3>
+                    <mat-form-field class="example-full-width">
+                        <input matInput type="number" [(ngModel)]="boxContainerHeight">
+                    </mat-form-field>
                 </div>
-                <div>
-                    <p>Height</p>
-                    <label>Box 1:</label>
-                    <input [(ngModel)]="boxHeight1"/>
-                    <label>Box 2:</label>
-                    <input [(ngModel)]="boxHeight2"/>
-                    <label>Box 3:</label>
-                    <input [(ngModel)]="boxHeight3"/>
-                    <label>Box 4:</label>
-                    <input [(ngModel)]="boxHeight4"/>
+                <div class="set-flex-direction">
+                    <h3>
+                        Set flex direction
+                    </h3>
+                    <button (click)="this.toggleFlexDirection('row')" mat-raised-button color="primary" class="toggle-button">
+                        row
+                    </button>
+                    <button (click)="this.toggleFlexDirection('column')" mat-raised-button color="primary" class="toggle-button">
+                        column
+                    </button>
+                    <button (click)="this.toggleFlexDirection('row-reverse')" mat-raised-button color="primary" class="toggle-button">
+                        row-reverse
+                    </button>
+                    <button (click)="this.toggleFlexDirection('column-reverse')" mat-raised-button color="primary" class="toggle-button">
+                        column-reverse
+                    </button>
                 </div>
-            </div>
-            <div>
-                <button (click)="this.changeAlignItems('stretch')" class="toggle-button">
+                <div class="set-flex-wrap">
+                    <h3>
+                        Set flex-wrap
+                    </h3>
+                    <button (click)="this.changeFlexWrap('nowrap')" mat-raised-button color="primary" class="toggle-button">
+                        no-wrap
+                    </button>
+                    <button (click)="this.changeFlexWrap('wrap')" mat-raised-button color="primary" class="toggle-button">
+                        wrap
+                    </button>
+                    <button (click)="this.changeFlexWrap('wrap-reverse')" mat-raised-button color="primary" class="toggle-button">
+                        wrap-reverse
+                    </button>
+                </div>
+                <div class="set-justify-content">
+                    <h3>
+                        Set justify-content
+                    </h3>
+                    <button (click)="this.changeJustifyContent('flex-start')" mat-raised-button color="primary" class="toggle-button">
+                        flex-start
+                    </button>
+                    <button (click)="this.changeJustifyContent('flex-end')" mat-raised-button color="primary" class="toggle-button">
+                        flex-end
+                    </button>
+                    <button (click)="this.changeJustifyContent('center')" mat-raised-button color="primary" class="toggle-button">
+                        center
+                    </button>
+                    <button (click)="this.changeJustifyContent('space-between')" mat-raised-button color="primary" class="toggle-button">
+                        space-between
+                    </button>
+                    <button (click)="this.changeJustifyContent('space-around')" mat-raised-button color="primary" class="toggle-button">
+                        space-around
+                    </button>
+                    <button (click)="this.changeJustifyContent('space-evenly')" mat-raised-button color="primary" class="toggle-button">
+                        space-evenly
+                    </button>
+                </div>
+                <div class="set-align-items">
+                    <h3>
+                        Set Align Items
+                    </h3>
+                    <div class="sub-set-align-items">
+                        <p>
+                            Change box width and height values
+                        </p>
+                        <div>
+                            <p>Width</p>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Box 3:</mat-label>
+                                    <input matInput type="number" [(ngModel)]="boxWidth1">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Box 3:</mat-label>
+                                    <input matInput type="number" [(ngModel)]="boxWidth2">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Box 3:</mat-label>
+                                    <input matInput type="number" [(ngModel)]="boxWidth3">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Box 4:</mat-label>
+                                    <input matInput type="number" [(ngModel)]="boxWidth4">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Height</p>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Box 1:</mat-label>
+                                    <input matInput type="number" [(ngModel)]="boxHeight1">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Box 2:</mat-label>
+                                    <input matInput type="number" [(ngModel)]="boxHeight2">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Box 3:</mat-label>
+                                    <input matInput type="number" [(ngModel)]="boxHeight3">
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Box 4:</mat-label>
+                                    <input matInput type="number" [(ngModel)]="boxHeight4">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button (click)="this.changeAlignItems('stretch')" mat-raised-button color="primary" class="toggle-button">
+                                stretch
+                        </button>
+                        <button (click)="this.changeAlignItems('flex-start')" mat-raised-button color="primary" class="toggle-button">
+                            flex-start
+                        </button>
+                        <button (click)="this.changeAlignItems('flex-end')" mat-raised-button color="primary" class="toggle-button">
+                            flex-end
+                        </button>
+                        <button (click)="this.changeAlignItems('center')" mat-raised-button color="primary" class="toggle-button">
+                            center
+                        </button>
+                        <button (click)="this.changeAlignItems('baseline')" mat-raised-button color="primary" class="toggle-button">
+                            baseline
+                        </button>
+                    </div>
+                </div>
+                <div class="set-align-content">
+                    <h3>
+                        Set align-content
+                    </h3>
+                    <button (click)="this.changeAlignContent('flex-start')" mat-raised-button color="primary" class="toggle-button">
+                        flex-start
+                    </button>
+                    <button (click)="this.changeAlignContent('flex-end')" mat-raised-button color="primary" class="toggle-button">
+                        flex-end
+                    </button>
+                    <button (click)="this.changeAlignContent('center')" mat-raised-button color="primary" class="toggle-button">
+                        center
+                    </button>
+                    <button (click)="this.changeAlignContent('stretch')" mat-raised-button color="primary" class="toggle-button">
                         stretch
-                </button>
-                <button (click)="this.changeAlignItems('flex-start')" class="toggle-button">
-                    flex-start
-                </button>
-                <button (click)="this.changeAlignItems('flex-end')" class="toggle-button">
-                    flex-end
-                </button>
-                <button (click)="this.changeAlignItems('center')" class="toggle-button">
-                    center
-                </button>
-                <button (click)="this.changeAlignItems('baseline')" class="toggle-button">
-                    baseline
-                </button>
+                    </button>
+                    <button (click)="this.changeAlignContent('space-between')" mat-raised-button color="primary" class="toggle-button">
+                        space-between
+                    </button>
+                    <button (click)="this.changeAlignContent('space-around')" mat-raised-button color="primary" class="toggle-button">
+                        space-around
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="set-align-content">
-            <h3>
-                Set align-content
-            </h3>
-            <div class="boxContainerWrapper">
-                <p>
-                    Change box wrapper height
-                </p>
-                <input [(ngModel)]="boxContainerHeight"/>
+            <div class="children-properties">
             </div>
-            <button (click)="this.changeAlignContent('flex-start')" class="toggle-button">
-                flex-start
-            </button>
-            <button (click)="this.changeAlignContent('flex-end')" class="toggle-button">
-                flex-end
-            </button>
-            <button (click)="this.changeAlignContent('center')" class="toggle-button">
-                center
-            </button>
-            <button (click)="this.changeAlignContent('stretch')" class="toggle-button">
-                stretch
-            </button>
-            <button (click)="this.changeAlignContent('space-between')" class="toggle-button">
-                space-between
-            </button>
-            <button (click)="this.changeAlignContent('space-around')" class="toggle-button">
-                space-around
-            </button>
         </div>
     </div>
 </div>

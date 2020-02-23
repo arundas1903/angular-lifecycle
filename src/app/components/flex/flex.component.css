@@ -4,8 +4,11 @@
     padding: 10px;
 }
 
+.heading {
+    text-align: center;
+}
+
 .sub-container {
-    background: #cacaca;
     border: 1px solid;
     padding: 10px;
 }
@@ -26,20 +29,19 @@ input {
     border: 1px solid;
     background-color: white;
     margin: 2px;
+    text-align: center;
 }
 
 .toggle-button {
-    padding: 10px;
-    background: white;
-    margin-right: 10px;
+    padding: 5px;
+    margin-right: 40px;
 }
 
 .set-align-items, .set-justify-content, .set-flex-wrap, .set-flex-direction, .set-values, .set-align-content {
-    border: 1px solid;
     padding: 10px;
-    background-color: #fafad2;
+    background-color: #f2f2f2;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .sub-set-align-items div {
@@ -52,4 +54,21 @@ input {
 
 .boxContainerWrapper {
     margin-bottom: 10px;
+}
+
+.children-properties{
+    width: 50%; 
+    border: 1px solid; 
+    margin: 10px;
+}
+
+.parent-properties {
+    width: 50%;
+    border: 1px solid; 
+    margin: 10px;
+}
+
+.properties-wrapper {
+    display: flex; 
+    flex-direction: row;
 }
