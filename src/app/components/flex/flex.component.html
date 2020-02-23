@@ -18,11 +18,12 @@
         <div class="flex-container" 
         [ngStyle]="{'flex-direction': flexDirection, 
                     'flex-wrap': flexWrap,
-                    'justify-content': justifyContent}">
-            <div #box [ngStyle]="{'width': boxWidth1 + 'px'}" class="box">1</div>
-            <div [ngStyle]="{'width': boxWidth2 + 'px'}" class="box">2</div>
-            <div [ngStyle]="{'width': boxWidth3 + 'px'}" class="box">3</div>
-            <div [ngStyle]="{'width': boxWidth4 + 'px'}" class="box">4</div>
+                    'justify-content': justifyContent,
+                    'align-items': alignItems}">
+            <div #box [ngStyle]="{'width': boxWidth1 + 'px', 'height': boxHeight1 + 'px'}" class="box">1</div>
+            <div [ngStyle]="{'width': boxWidth2 + 'px', 'height': boxHeight2 + 'px'}" class="box">2</div>
+            <div [ngStyle]="{'width': boxWidth3 + 'px', 'height': boxHeight3 + 'px'}" class="box">3</div>
+            <div [ngStyle]="{'width': boxWidth4 + 'px', 'height': boxHeight4 + 'px'}" class="box">4</div>
         </div>
         <p>
             Box width set: 600px
@@ -31,9 +32,13 @@
             Calculated box width after render: {{ box.offsetWidth }}
         </p>
         <p>
-            Change Width:
+            Set box Width:
         </p>
         <input (keyup)="setBoxWidth($event.target.value)" type="number"/>
+        <p>
+            Set box Height:
+        </p>
+        <input (keyup)="setBoxHeight($event.target.value)" type="number"/>
         <div>
             <p>
                 Set flex direction
@@ -94,7 +99,7 @@
             </p>
             <div class="set-align-items">
                 <p>
-                    Change box width values
+                    Change box width and height values
                 </p>
                 <div>
                     <label>Box 1 Width:</label>
@@ -112,6 +117,57 @@
                     <label>Box 4 Width:</label>
                     <input [(ngModel)]="boxWidth4"/>
                 </div>
+                <div>
+                    <label>Box 1 Height:</label>
+                    <input [(ngModel)]="boxHeight1"/>
+                </div>
+                <div>
+                    <label>Box 2 Height:</label>
+                    <input [(ngModel)]="boxHeight2"/>
+                </div>
+                <div>
+                    <label>Box 3 Height:</label>
+                    <input [(ngModel)]="boxHeight3"/>
+                </div>
+                <div>
+                    <label>Box 4 Height:</label>
+                    <input [(ngModel)]="boxHeight4"/>
+                </div>
+            </div>
+            <div>
+                <button (click)="this.changeAlignItems('stretch')" class="toggle-button">
+                        stretch
+                </button>
+                <button (click)="this.changeAlignItems('flex-start')" class="toggle-button">
+                    flex-start
+                </button>
+                <button (click)="this.changeAlignItems('flex-end')" class="toggle-button">
+                    flex-end
+                </button>
+                <button (click)="this.changeAlignItems('center')" class="toggle-button">
+                    center
+                </button>
+                <button (click)="this.changeAlignItems('baseline')" class="toggle-button">
+                    baseline
+                </button>
+                <button (click)="this.changeAlignItems('first baseline')" class="toggle-button">
+                    first baseline
+                </button>
+                <button (click)="this.changeAlignItems('last baseline')" class="toggle-button">
+                    last baseline
+                </button>
+                <button (click)="this.changeAlignItems('start')" class="toggle-button">
+                    start
+                </button>
+                <button (click)="this.changeAlignItems('end')" class="toggle-button">
+                    end
+                </button>
+                <button (click)="this.changeAlignItems('self-start')" class="toggle-button">
+                    self-start
+                </button>
+                <button (click)="this.changeAlignItems('self-end')" class="toggle-button">
+                    self-end
+                </button>
             </div>
         </div>
     </div>
