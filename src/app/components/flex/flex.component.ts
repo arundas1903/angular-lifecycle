@@ -19,18 +19,23 @@ export class FlexComponent implements OnInit {
   boxHeight2: number = 50;
   boxHeight3: number = 50;
   boxHeight4: number = 50;
-  boxOrder1: number = 1;
-  boxOrder2: number = 2;
-  boxOrder3: number = 3;
-  boxOrder4: number = 4;
+  boxOrder1: number = 0;
+  boxOrder2: number = 0;
+  boxOrder3: number = 0;
+  boxOrder4: number = 0;
   boxFlexGrow1: number = 1;
-  boxFlexGrow2: number = 2;
-  boxFlexGrow3: number = 3;
-  boxFlexGrow4: number = 4;
+  boxFlexGrow2: number = 1;
+  boxFlexGrow3: number = 1;
+  boxFlexGrow4: number = 1;
   boxFlexShrink1: number = 1;
   boxFlexShrink2: number = 1;
   boxFlexShrink3: number = 1;
   boxFlexShrink4: number = 1;
+  alignSelfItems = ["auto", "flex-start", "flex-end", "center", "baseline", "stretch"];
+  box1AlignSelf = "auto";
+  box2AlignSelf = "auto";
+  box3AlignSelf = "auto";
+  box4AlignSelf = "auto";
   boxContainerHeight: number = 100;
 
   constructor() { }

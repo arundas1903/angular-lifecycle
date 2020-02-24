@@ -22,18 +22,22 @@
             <div #box 
                 [ngStyle]="{'width': boxWidth1 + 'px', 'order': boxOrder1,
                             'flex-grow': boxFlexGrow1, 'flex-shrink': boxFlexShrink1,
+                            'align-self': box1AlignSelf,
                             'height': boxHeight1 + 'px'}" class="box">Box 1</div>
             <div 
                 [ngStyle]="{'width': boxWidth2 + 'px', 'order': boxOrder2,
                             'flex-grow': boxFlexGrow2,'flex-shrink': boxFlexShrink2,
+                            'align-self': box2AlignSelf,
                             'height': boxHeight2 + 'px'}" class="box">Box 2</div>
             <div 
                 [ngStyle]="{'width': boxWidth3 + 'px', 'order': boxOrder3,
                             'flex-grow': boxFlexGrow3, 'flex-shrink': boxFlexShrink3,
+                            'align-self': box3AlignSelf,
                             'height': boxHeight3 + 'px'}" class="box">Box 3</div>
             <div 
                 [ngStyle]="{'width': boxWidth4 + 'px', 'order': boxOrder4,
                             'flex-grow': boxFlexGrow4, 'flex-shrink': boxFlexShrink4,
+                            'align-self': box4AlignSelf,
                             'height': boxHeight4 + 'px'}" class="box">Box 4</div>
         </div>
         <p>
@@ -240,7 +244,7 @@
                         <input matInput type="number" [(ngModel)]="boxOrder4">
                     </mat-form-field>
                 </div>
-                <div class="set-order set-wrapper">
+                <div class="set-flex-grow set-wrapper">
                     <h3>
                         Set Flex Grow:
                     </h3>
@@ -261,7 +265,7 @@
                         <input matInput type="number" [(ngModel)]="boxFlexGrow4">
                     </mat-form-field>
                 </div>
-                <div class="set-order set-wrapper">
+                <div class="set-flex-shrink set-wrapper">
                     <h3>
                         Set Flex Shrink:
                     </h3>
@@ -281,6 +285,43 @@
                         <mat-label>Box 4:</mat-label>
                         <input matInput type="number" [(ngModel)]="boxFlexShrink4">
                     </mat-form-field>
+                </div>
+                <div class="set-align-self set-wrapper">
+                    <h3>
+                        Set Align Self FOr Boxes:
+                    </h3>
+                    <div>
+                        <mat-label>Box 1:</mat-label>
+                        <mat-select [(value)]="box1AlignSelf">
+                            <mat-option *ngFor="let alignSelf of alignSelfItems" [value]="alignSelf">
+                                {{alignSelf | titlecase}}
+                            </mat-option>
+                        </mat-select>
+                    </div>
+                    <div>
+                        <mat-label>Box 2:</mat-label>
+                        <mat-select [(value)]="box2AlignSelf">
+                            <mat-option *ngFor="let alignSelf of alignSelfItems" [value]="alignSelf">
+                                {{alignSelf | titlecase}}
+                            </mat-option>
+                        </mat-select>
+                    </div>
+                    <div>
+                        <mat-label>Box 3:</mat-label>
+                        <mat-select [(value)]="box3AlignSelf">
+                            <mat-option *ngFor="let alignSelf of alignSelfItems" [value]="alignSelf">
+                                {{alignSelf | titlecase}}
+                            </mat-option>
+                        </mat-select>
+                    </div>
+                    <div>
+                        <mat-label>Box 4:</mat-label>
+                        <mat-select [(value)]="box4AlignSelf">
+                            <mat-option *ngFor="let alignSelf of alignSelfItems" [value]="alignSelf">
+                                {{alignSelf | titlecase}}
+                            </mat-option>
+                        </mat-select>
+                    </div>
                 </div>
             </div>
         </div>

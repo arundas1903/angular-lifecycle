@@ -76,3 +76,8 @@ mat-form-field {
     display: flex; 
     flex-direction: row;
 }
+
+mat-select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
