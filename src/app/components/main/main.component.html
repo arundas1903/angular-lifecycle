@@ -2,35 +2,23 @@
     <h2 class="main-heading">
         Main Component
     </h2>
-    <div class="main-detail">
-        <p>
-            Width: 100%
-        </p>
-        <p>
-            Height: 750px
-        </p>
-    </div>
-    <h5>
-        Hooks
-    </h5>
+    <h3>
+        Analyse Hooks
+    </h3>
     <div style="display: inline-block;">
         <div style="display: inline-block;" *ngFor="let hook of mainHooks">
             {{ hook }}, 
         </div>
     </div>
     <div style="margin-top: 10px;" *ngIf="inputEnabled">
-        <input [(ngModel)]="inputData"/>
+        <mat-form-field>
+            <mat-label>Test Input Box:</mat-label>
+            <input matInput [(ngModel)]="inputData">
+        </mat-form-field>
     </div>
-    <div>
-        <p>Enable/Disable Input box</p>
-        <button (click)="toggleInput()">Click</button>
+    <div style="margin-top: 15px;">
+        <button (click)="toggleInput()" mat-raised-button color="primary" class="toggle-button">Enable/Disable Input box</button>
     </div>
-    <!-- <div>
-        Input data is: {{ inputData }}
-    </div> -->
-    <app-sub-component></app-sub-component>
-    <app-sub-component2></app-sub-component2>
-
     <div>
         <p>
             <a [routerLink]="['/github']" routerLinkActive="router-link-active" >
