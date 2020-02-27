@@ -13,6 +13,8 @@ import { SubComponentComponent } from './components/sub-component/sub-component.
 import { SubComponent2Component } from './components/sub-component2/sub-component2.component';
 import { GithubComponent } from './components/github/github.component';
 import { FlexComponent } from './components/flex/flex.component';
+import { ParentToChildInputComponent } from './components/parent-to-child-input/parent-to-child-input.component';
+import { ChildComponent1Component } from './components/child-component1/child-component1.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FlexComponent } from './components/flex/flex.component';
     SubComponentComponent,
     SubComponent2Component,
     GithubComponent,
-    FlexComponent
+    FlexComponent,
+    ParentToChildInputComponent,
+    ChildComponent1Component
   ],
   imports: [
     BrowserModule,

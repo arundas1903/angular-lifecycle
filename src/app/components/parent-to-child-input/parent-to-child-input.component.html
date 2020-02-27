@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <h2>
+        Parent to Child via Input
+    </h2>
+    <p>Data will be sent to child</p>
+    <mat-form-field>
+        <input matInput type="string" [(ngModel)]="parentData">
+    </mat-form-field>
+    <app-child-component1 [parentData]=parentData></app-child-component1>
+</div>
